@@ -165,10 +165,6 @@ class dash_screen(object):
 
         return rows
 
-    # def convertToParkData(self, rows):
-    #     for row in rows:
-    #         data.id = row[0]
-
     def populate_with_all(self):
         park_list = self.connect_and_retrieve_all('identifier.sqlite', 'PARK_NAMES')
         # park_list = park_list[0:2]
