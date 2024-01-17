@@ -18,8 +18,6 @@ class maps_screen(object):
         self.map_container.setFlat(True)
 
         layout = QtWidgets.QVBoxLayout(self.map_container)
-        df = pd.read_csv('nationalparks.csv', usecols=['longitude', 'latitude', 'details', ])
-        df.columns = ['Longitude', 'Latitude', 'Name']
 
 
         coordinate = (48.31521, -114.66929)
@@ -30,11 +28,6 @@ class maps_screen(object):
             control_scale=True
         )
 
-        for i, row in df.iterrows():
-            iframe = folium.IFrame('Name:' + str(row["Name"]))
-            popup = folium.Popup(iframe, min_width=300, max_width=300)
-            folium.Marker(location=[row['Latitude'], row['Longitude']],
-                          popup=popup, c=row['Name']).add_to(map)
 
 
         data = io.BytesIO()

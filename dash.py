@@ -168,7 +168,6 @@ class dash_screen(object):
     def populate_with_all(self):
         park_list = self.connect_and_retrieve_all('identifier.sqlite', 'PARK_NAMES')
         # park_list = park_list[0:2]
-        print(park_list)
         # global indiv_park
         for indiv_park in park_list:
             self.park_info_container = QtWidgets.QGroupBox(self.maps)
